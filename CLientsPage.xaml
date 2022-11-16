@@ -1,0 +1,56 @@
+﻿<Page x:Class="BarberShop.CLientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BarberShop"
+      mc:Ignorable="d" 
+      d:DesignHeight="309" d:DesignWidth="772"
+      Title="CLientsPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="ColdGrid">
+            <ListView Visibility="Visible" x:Name="ClientsLV" Width="500" HorizontalAlignment="Left">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="id" DisplayMemberBinding="{Binding IDClient}" Width="30"/>
+                        <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Surname}" Width="100"/>
+                        <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Name}" Width="90"/>
+                        <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Patronymic}" Width="90"/>
+                        <GridViewColumn Header="Номер телефона" DisplayMemberBinding="{Binding Phonenumber}" Width="120"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+       
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="AddBt" 
+                    Click="AddBt_Click"
+                Height="50" 
+                Width="160"
+                Content="Добавить клиента"
+                Style="{StaticResource AaaactBt}"
+                BorderBrush="Transparent" 
+                BorderThickness="0" 
+                Foreground="#F5EEE6" 
+                 FontSize="20"
+                FontFamily="Garamond"/>
+
+            <Button x:Name="DeleteBt"  Margin="10"
+                    Click="DeleteBt_Click"
+                Height="50" 
+                Width="160"
+                Content="Удалить клиента"
+                Style="{StaticResource AaaactBt}"
+                BorderBrush="Transparent" 
+                BorderThickness="0" 
+                Foreground="#F5EEE6" 
+                FontSize="20"
+                FontFamily="Garamond"/>
+        </StackPanel>
+    </Grid>
+</Page>
